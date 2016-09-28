@@ -1,3 +1,8 @@
+P2Pool - Harambecoin
+=========================
+Straighforward fork of p2pool with harambecoin network info added. Instructions
+are also provided in this readme for using p2pool specifically for harambecoin.
+
 Requirements:
 -------------------------
 Generic:
@@ -18,41 +23,9 @@ Windows:
 * Install python win32 api wmi wrapper: https://pypi.python.org/pypi/WMI/#downloads
 * Unzip the files into C:\Python27\Lib\site-packages
 
-Running P2Pool:
--------------------------
-To use P2Pool, you must be running your own local bitcoind. For standard
-configurations, using P2Pool should be as simple as:
-
-    python run_p2pool.py
-
-Then run your miner program, connecting to 127.0.0.1 on port 9332 with any
-username and password.
-
-If you are behind a NAT, you should enable TCP port forwarding on your
-router. Forward port 9333 to the host running P2Pool.
-
-Run for additional options.
-
-    python run_p2pool.py --help
-
-Donations towards further development:
--------------------------
-    1HNeqi3pJRNvXybNX4FKzZgYJsdTSqJTbk
-
-Official wiki:
--------------------------
-https://en.bitcoin.it/wiki/P2Pool
-
-Alternate web frontend:
--------------------------
-* https://github.com/hardcpp/P2PoolExtendedFrontEnd
-
-Notes for Litecoin:
-=========================
-Requirements:
--------------------------
-In order to run P2Pool with the Litecoin network, you would need to build and install the
-ltc_scrypt module that includes the scrypt proof of work code that Litecoin uses for hashes.
+In order to run P2Pool with the Harambecoin network, you would need to build and
+install the ltc_scrypt module that includes the scrypt proof of work code that 
+Harambecoin uses for hashes.
 
 Linux:
 
@@ -78,21 +51,29 @@ In bash type this:
     cd litecoin_scrypt
     C:\Python27\python.exe setup.py build --compile=mingw32 install
 	
-If you run into an error with unrecognized command line option '-mno-cygwin', see this:
+If you run into an error with unrecognized command line option '-mno-cygwin', 
+see this:
 http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produces-gcc-error-unrecognized-command-line-o
 
 Running P2Pool:
 -------------------------
-Run P2Pool with the "--net litecoin" option.
-Run your miner program, connecting to 127.0.0.1 on port 9327.
-Forward port 9338 to the host running P2Pool.
+To use P2Pool, you must be running your own local harambecoind with server=1 
+enabled in your .conf file or with the -server flag. Also make sure that you 
+have all dependencies installed including compiling the ltc_scrypt module (see
+requirements section). Launch p2pool with the following
 
-Litecoin's use of ports 9333 and 9332 conflicts with P2Pool running on
-the Bitcoin network. To avoid problems, add these lines to litecoin.conf
-and restart litecoind:
+	python run_p2pool.py --net harambecoin -a <HARAMBECOINADDRESS>
 
-    rpcport=10332
-    port=10333
+Run your miner program, connecting to 127.0.0.1 on port 53000 with any
+username and password.
+
+For additional options or to try and troubleshoot any errors you may be 
+encounter, run:
+
+    python run_p2pool.py --help
+
+You can view statistics from your node by opening 127.0.0.1:53000 in a web 
+browser.
 
 Sponsors:
 -------------------------
