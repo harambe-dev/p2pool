@@ -13,7 +13,7 @@ MIN_TARGET = 0
 MAX_TARGET = 2**256//2**20 - 1
 PERSIST = True
 WORKER_PORT = 53000
-BOOTSTRAP_ADDRS = 'catillack.com'.split(' ')
+BOOTSTRAP_ADDRS = 'harambecoin.com'.split(' ')
 ANNOUNCE_CHANNEL = '#p2pool-hmbc'
 VERSION_CHECK = lambda v: None if 100001 <= v else 'Harambecoin version too old. Upgrade to 1.0.0.2 newer!'
 VERSION_WARNING = lambda v: None
