@@ -3,6 +3,13 @@ P2Pool - Harambecoin
 Straighforward fork of p2pool with harambecoin network info added. Instructions
 are also provided in this readme for using p2pool specifically for harambecoin.
 
+*NOTE*
+Right now the subsidy function uses a quick and dirty hack to just set the 
+value equal to the initial reward. This should work, however, after block
+29200 the first subsidy change occurs and all p2pool nodes will need to be 
+updated with the actual subsidy function (which will hopefully be availible by
+then).
+
 Requirements:
 -------------------------
 Generic:
